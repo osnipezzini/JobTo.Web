@@ -19,7 +19,9 @@ jobs:
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: '3.1.102'
-
+    
+    - name: Show folder
+      run: ls
     - name: Build with dotnet
       run: dotnet build "JobTo.Web.csproj" -c Release
 
