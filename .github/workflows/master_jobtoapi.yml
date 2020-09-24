@@ -19,7 +19,19 @@ jobs:
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: '3.1.102'
-
+    
+    - name: Install pre requisits
+      run: apt-get update -yq && apt-get install curl gnupg gcc g++ make -yq && curl -sL https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
+      
+    - name: Install yarn
+      run: curl -sL https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - && echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list && apt-get update && apt-get install yarn -yq
+    
+    - name: Install nodejs and npm
+      run: curl -sL https://deb.nodesource.com/setup_12.x | bash - && apt-get install -y nodejs
+      
+    - name: Restore project
+      run: dotnet restore && npm install
+      
     - name: Build with dotnet
       run: dotnet build --configuration Release
 
