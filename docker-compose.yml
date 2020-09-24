@@ -1,0 +1,15 @@
+version: '3.4'
+
+services:
+  jobto.web:
+    image: ${DOCKER_REGISTRY-}jobtoweb
+    build:
+      context: .
+      dockerfile: JobTo.Web/Dockerfile
+    depends_on:
+            - db
+  db:
+    image: "mcr.microsoft.com/mssql/server"
+    environment:
+      SA_PASSWORD: "StRongP45SW0Rd"
+      ACCEPT_EULA: "Y"

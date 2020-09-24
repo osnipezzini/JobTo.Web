@@ -15,6 +15,10 @@
     <PackageProjectUrl>https://www.ebenmonney.com/quickapp</PackageProjectUrl>
     <Company>EBENMONNEY</Company>
     <Version>3.0.0</Version>
+    <ApplicationIcon>icon_job.ico</ApplicationIcon>
+    <UserSecretsId>047d4cfe-31a5-406c-9979-c27f52fc3e2e</UserSecretsId>
+    <DockerComposeProjectPath>..\docker-compose.dcproj</DockerComposeProjectPath>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
   </PropertyGroup>
 
   <ItemGroup>
@@ -30,7 +34,8 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
-    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.0.3" />
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.10.9" />
     <PackageReference Include="Serilog.Extensions.Logging.File" Version="2.0.0-dev-00032" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="5.0.0-rc4" />
   </ItemGroup>
