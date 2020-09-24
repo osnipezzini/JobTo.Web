@@ -33,10 +33,10 @@ jobs:
       run: dotnet restore "JobTo.Web/JobTo.Web.csproj" && npm install
       
     - name: Build with dotnet
-      run: dotnet build "JobTo.Web.csproj" --configuration Release
+      run: dotnet build "JobTo.Web/JobTo.Web.csproj" --configuration Release
 
     - name: dotnet publish
-      run: dotnet publish "JobTo.Web.csproj" -c Release -o ${{env.DOTNET_ROOT}}/myapp
+      run: dotnet publish "JobTo.Web/JobTo.Web.csproj" -c Release -o ${{env.DOTNET_ROOT}}/myapp
 
     - name: Deploy to Azure Web App
       uses: azure/webapps-deploy@v2
