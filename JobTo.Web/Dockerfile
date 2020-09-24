@@ -20,6 +20,7 @@ RUN apt-get install -y nodejs && npm update
 
 FROM mcr.microsoft.com/dotnet/core/sdk:3.0-buster AS build
 WORKDIR /src
+RUN ls
 COPY ["JobTo.Web/JobTo.Web.csproj", "JobTo.Web/"]
 COPY ["DAL/DAL.csproj", "DAL/"]
 RUN dotnet restore "JobTo.Web/JobTo.Web.csproj"
